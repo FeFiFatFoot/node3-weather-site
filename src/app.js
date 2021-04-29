@@ -12,6 +12,7 @@ const forecast = require ('./utils/forecast')
 // Here app gives us access to the function
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // both the above come from the node wrapper, the same "require" comes from 
 // console.log(__dirname) // expect C:\Users\Private\code\nodecourse\mod3\web-server\src
@@ -119,6 +120,6 @@ app.get('*', (req, res) => {
 })
 
 // listen is only used once and it starts up the server on a given port
-app.listen(3000, () => {
-    console.log('Server running on port 3000')
+app.listen(port, () => {
+    console.log('Server running on port ' + port)
 })
